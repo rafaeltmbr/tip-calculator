@@ -9,11 +9,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.List
-import androidx.compose.material.icons.outlined.Star
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -78,7 +74,7 @@ fun TipCalculatorScreen(
                 value = costOfService,
                 imeAction = ImeAction.Next,
                 onValueChange = { costOfService = it },
-                leadingIcon = { Icon(Icons.Outlined.List, contentDescription = null) }
+//                leadingIcon = { Icon(Icons.Outlined.List, contentDescription = null) }
             )
 
             Spacer(modifier = Modifier.height(24.dp))
@@ -87,7 +83,7 @@ fun TipCalculatorScreen(
                 value = tipPercentage,
                 imeAction = ImeAction.Done,
                 onValueChange = { tipPercentage = it },
-                leadingIcon = { Icon(Icons.Outlined.Star, contentDescription = null) }
+//                leadingIcon = { Icon(Icons.Outlined.Star, contentDescription = null) }
             )
 
             Spacer(modifier = Modifier.height(16.dp))
