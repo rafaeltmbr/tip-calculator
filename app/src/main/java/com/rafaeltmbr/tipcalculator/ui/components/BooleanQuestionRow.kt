@@ -9,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 
 @Composable
@@ -16,6 +17,7 @@ fun BooleanQuestionRow(
     @StringRes questionLabel: Int,
     checked: Boolean,
     onCheckedChange: (Boolean) -> Unit,
+    switchTestTag: String? = null,
     modifier: Modifier = Modifier,
 ) {
     Row(
@@ -26,6 +28,10 @@ fun BooleanQuestionRow(
             .then(modifier)
     ) {
         Text(text = stringResource(id = questionLabel))
-        Switch(checked = checked, onCheckedChange = onCheckedChange)
+        Switch(
+            checked = checked,
+            onCheckedChange = onCheckedChange,
+            modifier = if (switchTestTag != null) Modifier.testTag(switchTestTag) else Modifier
+        )
     }
 }

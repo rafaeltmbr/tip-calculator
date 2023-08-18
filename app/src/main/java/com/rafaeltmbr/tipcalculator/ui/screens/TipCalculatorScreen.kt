@@ -29,10 +29,11 @@ import com.rafaeltmbr.tipcalculator.common.utils.calculateTip
 import com.rafaeltmbr.tipcalculator.ui.components.BooleanQuestionRow
 import com.rafaeltmbr.tipcalculator.ui.components.NumericField
 
+internal val roundTipSwitchTestTag = "roundTipSwitchTestTag"
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TipCalculatorScreen(
+internal fun TipCalculatorScreen(
     modifier: Modifier = Modifier,
 ) {
     val defaultTipPercentage = stringResource(id = R.string.default_tip_percentage)
@@ -90,6 +91,7 @@ fun TipCalculatorScreen(
             BooleanQuestionRow(
                 questionLabel = R.string.round_tip_question,
                 checked = roundTipUp,
+                switchTestTag = roundTipSwitchTestTag,
                 onCheckedChange = { roundTipUp = it }
             )
 
